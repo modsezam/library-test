@@ -13,6 +13,5 @@
         <mapping class="com.sda.entity.User"/>
         <mapping class="com.sda.entity.Book"/>
         <mapping class="com.sda.entity.BorrowHistory"/>
-        <mapping class="com.sda.entity.BorrowHistoryId"/>
     </session-factory>
 </hibernate-configuration>

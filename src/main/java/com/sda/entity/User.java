@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class User implements Serializable {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -25,7 +25,7 @@ public class User implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user")
     private Set<BorrowHistory> borrowHistories = new HashSet<>();
 
     public User(String email, String firstName, String lastName) {

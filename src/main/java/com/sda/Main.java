@@ -4,7 +4,6 @@ import com.sda.entity.Book;
 import com.sda.entity.BorrowHistory;
 import com.sda.entity.User;
 
-
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -25,9 +24,10 @@ public class Main {
         BorrowHistory borrowHistory1 = new BorrowHistory();
         BorrowHistory borrowHistory2 = new BorrowHistory();
 
+        borrowHistory1.setBorrowDate(Date.valueOf(LocalDate.now()));
         borrowHistory1.setBook(book1);
         borrowHistory1.setUser(user1);
-        borrowHistory1.setBorrowDate(Date.valueOf(LocalDate.now()));
+
 
 //        book2.borrowBookByUser(user2);
 //
@@ -41,8 +41,11 @@ public class Main {
 //        book2.borrowBookByUser(user1);
 //
 
-        dao.update(borrowHistory1);
-//        dao.newObject(book2);
+        dao.newObject(book1);
+        dao.newObject(book2);
+        dao.newObject(user1);
+        dao.newObject(borrowHistory1);
 
+        dao.delete(book2);
     }
 }
